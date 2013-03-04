@@ -7,10 +7,10 @@ Controls
 The controls of the game can be changed from the game.h file
 under the respective constants.
 
-UP  - W
-LEFT	- A
-RIGHT	- D
-DOWN	- S
+* UP    - W
+* LEFT	- A
+* RIGHT	- D
+* DOWN	- S
 
 Customizing Game Settings
 -------------------------
