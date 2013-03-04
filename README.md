@@ -16,7 +16,7 @@ Customizing Game Settings
 -------------------------
 
 Various game constants such as game speed, maximum players, controls, score information
-etc can be edited and changed from the game.h and connection.h
+etc can be edited and changed from the *game.h* and *connection.h*
 
 
 Description
@@ -30,9 +30,9 @@ This limit can easily be changed in game.h (MAX_PLAYERS)
 The server process is responsible for the handling of all the game logic in the system.
 During each game loop, the server will 
 
-1) Update the active snake positions depending on the direction they are facing
-2) Check for any collisions. If any collisions are found, the respective player is killed
-3) Generate fruit at random points at random intervals
+1. Update the active snake positions depending on the direction they are facing
+2. Check for any collisions. If any collisions are found, the respective player is killed
+3. Generate fruit at random points at random intervals
 
 All the game information is stored in a portion of shared memory which all processes related
 to the game have access to. If a process wishes to write to a portion of shared memory which is
@@ -49,6 +49,8 @@ Further detials on the game structure can be found in game.h and game.c
 Connection.h and Connection.c contains a group of methods related to connecting to IPC structures
 such as shared memory and semaphores.
 
+![System Architecture](Architecture.jpg)
+
 Optimisations
 -------------
 
@@ -59,7 +61,7 @@ allows for quick updating of player snakes and removes the need for complicated 
 link list of nodes to be used.
 
 
-Bugs
-----
+Known Bugs
+----------
 
 On rare occassions, the client process wont start until another client process joins the game
