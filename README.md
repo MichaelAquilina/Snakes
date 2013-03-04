@@ -16,7 +16,7 @@ Customizing Game Settings
 -------------------------
 
 Various game constants such as game speed, maximum players, controls, score information
-etc can be edited and changed from the *game.h* and *connection.h*
+etc can be edited and changed from the **game.h** and **connection.h**
 
 
 Description
