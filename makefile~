@@ -1,0 +1,20 @@
+#
+#	Make file for Snakes
+#	Michael Aquilina
+#	February 2010
+#
+
+snakesserver:	game.o connection.o snakesserver.c snakesclient
+	gcc game.o connection.o snakesserver.c -lncurses -o snakesserver
+
+snakesclient:	game.o connection.o snakesclient.c
+	gcc game.o connection.o snakesclient.c -lncurses -o snakesclient
+
+game.o: game.h game.c
+	gcc -c game.c -o game.o
+
+connection.o: connection.h connection.c
+	gcc -c connection.c -o connection.o
+
+clean:
+	rm -f snakesserver snakesclient
