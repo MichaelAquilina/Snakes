@@ -1,8 +1,5 @@
-SNAKES SYSTEM PROGRAMMING ASSIGNMENT
+Multiplayer Snakes for UNIX Consoles
 ====================================
-
-Developed by Michael Aquilina (ID 504389M)
-for the University of Malta 2010
 
 Controls
 -----------
