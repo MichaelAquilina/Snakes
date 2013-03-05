@@ -70,10 +70,10 @@ Building
 --------
 
 The application can be built using a GCC compiler. You will need to build in the following steps:
--Build game.c to the game.o library
--Build connection.c the connection.o library
--Build snakesserver.c with reference to game.o and connection.o
--Build snakesclient.c with reference to game.o and connection.o
+* Build game.c to the game.o library
+* Build connection.c the connection.o library
+* Build snakesserver.c with reference to game.o and connection.o
+* Build snakesclient.c with reference to game.o and connection.o
 
 Running
 -------
