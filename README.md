@@ -65,3 +65,19 @@ Known Bugs
 ----------
 
 On rare occassions, the client process wont start until another client process joins the game
+
+Building
+--------
+
+The application can be built using a GCC compiler. You will need to build in the following steps:
+-Build game.c to the game.o library
+-Build connection.c the connection.o library
+-Build snakesserver.c with reference to game.o and connection.o
+-Build snakesclient.c with reference to game.o and connection.o
+
+Running
+-------
+
+Execute *snakesclient* in a terminal to begin the game. If a snakesserver has not been started, the client will
+automatically fork a server process to handle its requests. Any subsequent snakesclients that are executed will
+connect the the server and as a result - any active players.
