@@ -37,7 +37,7 @@ During each game loop, the server will
 All the game information is stored in a portion of shared memory which all processes related
 to the game have access to. If a process wishes to write to a portion of shared memory which is
 accessed by all processes, it will need to acquire access to a semaphore, which helps remove
-race conditions.Shared memory is divided into 1 section containing game and server information, and an
+race conditions. Shared memory is divided into 1 section containing game and server information, and an
 array of player structures which contains information about the appropriate player and its snake.
 
 The client process is a very simple process which only reads input from the users keyboard
@@ -54,7 +54,7 @@ such as shared memory and semaphores.
 Optimisations
 -------------
 
-the snakes in the game are represented by an array of x,y coordinates and a head variable. 
+The snakes in the game are represented by an array of x,y coordinates and a head variable. 
 In order for the snake to move forward one space, the head variable which points to the head of the snake 
 just needs to be moved forward one space and the new cell updated depending on the snakes direction. This
 allows for quick updating of player snakes and removes the need for complicated data structures such as a
