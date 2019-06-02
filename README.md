@@ -23,12 +23,12 @@ Description
 -----------
 
 The System at any point in time has 1 server process, 1 segment of shared memory
-and at least 1 client process. There may be several client processes, 
-but for the sake of keeping the screen from being overcrowded, a limit of 8 is kept. 
+and at least 1 client process. There may be several client processes,
+but for the sake of keeping the screen from being overcrowded, a limit of 8 is kept.
 This limit can easily be changed in game.h (MAX_PLAYERS)
 
 The server process is responsible for the handling of all the game logic in the system.
-During each game loop, the server will 
+During each game loop, the server will
 
 1. Update the active snake positions depending on the direction they are facing
 2. Check for any collisions. If any collisions are found, the respective player is killed
@@ -41,7 +41,7 @@ race conditions. Shared memory is divided into 1 section containing game and ser
 array of player structures which contains information about the appropriate player and its snake.
 
 The client process is a very simple process which only reads input from the users keyboard
-and draws the information which is shared memory onto the clients terminal (The analogy is the client 
+and draws the information which is shared memory onto the clients terminal (The analogy is the client
 process being a dumb terminal with the snakes process being a mainframe server).
 
 Further detials on the game structure can be found in game.h and game.c
@@ -54,8 +54,8 @@ such as shared memory and semaphores.
 Optimisations
 -------------
 
-The snakes in the game are represented by an array of x,y coordinates and a head variable. 
-In order for the snake to move forward one space, the head variable which points to the head of the snake 
+The snakes in the game are represented by an array of x,y coordinates and a head variable.
+In order for the snake to move forward one space, the head variable which points to the head of the snake
 just needs to be moved forward one space and the new cell updated depending on the snakes direction. This
 allows for quick updating of player snakes and removes the need for complicated data structures such as a
 link list of nodes to be used.
@@ -69,15 +69,15 @@ On rare occassions, the client process wont start until another client process j
 Building
 --------
 
-The application can be built using a GCC compiler. You will need to build in the following steps:
-* Build game.c to the game.o library
-* Build connection.c the connection.o library
-* Build snakesserver.c with reference to game.o and connection.o
-* Build snakesclient.c with reference to game.o and connection.o
+Requires libncurses development files to be installed
+
+The application can be built using a GCC compiler.
+
+Run `make snakesserver` and `make snakesclient`
 
 Running
 -------
 
 Execute *snakesclient* in a terminal to begin the game. If a snakesserver has not been started, the client will
 automatically fork a server process to handle its requests. Any subsequent snakesclients that are executed will
-connect the the server and as a result - any active players.
+connect the server and as a result - any active players.
